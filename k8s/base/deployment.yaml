@@ -19,3 +19,7 @@ spec:
           image: nginx:stable
           ports:
             - containerPort: 80
+          volumeMounts: 
+            - name: nginx-config
+              mountPath: /usr/share/nginx/html/index.html
+              subPath: index.html
