@@ -1,236 +1,236 @@
 apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: nginx-html
 data:
   index.html: |
-  <!doctype html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio — Seu Nome | DevOps & SRE</title>
-  <meta name="description" content="Portfolio técnico: DevOps, Kubernetes, GitOps, CI/CD e Observability. Veja projetos, stack e contato." />
-  <meta name="theme-color" content="#071025" />
-  <style>
-    :root{
-      --bg:#081026; --bg2:#061024; --card:rgba(255,255,255,.04);
-      --muted:rgba(255,255,255,.66); --txt:rgba(255,255,255,.94);
-      --accent1:#7CFFB2; --accent2:#7CCBFF; --accent3:#FFCE7C;
-      --glass: rgba(255,255,255,.03);
-      --radius:14px;
-      --shadow: 0 10px 30px rgba(2,6,23,.6);
-    }
+    <!doctype html>
+    <html lang="pt-BR">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Portfolio — Seu Nome | DevOps & SRE</title>
+      <meta name="description" content="Portfolio técnico: DevOps, Kubernetes, GitOps, CI/CD e Observability. Veja projetos, stack e contato." />
+      <meta name="theme-color" content="#071025" />
+      <style>
+        :root{
+          --bg:#081026; --bg2:#061024; --card:rgba(255,255,255,.04);
+          --muted:rgba(255,255,255,.66); --txt:rgba(255,255,255,.94);
+          --accent1:#7CFFB2; --accent2:#7CCBFF; --accent3:#FFCE7C;
+          --glass: rgba(255,255,255,.03);
+          --radius:14px;
+          --shadow: 0 10px 30px rgba(2,6,23,.6);
+        }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      color:var(--txt);
-      background: linear-gradient(180deg,var(--bg),var(--bg2));
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-      line-height:1.5;
-    }
+        *{box-sizing:border-box}
+        html,body{height:100%}
+        body{
+          margin:0; font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+          color:var(--txt);
+          background: linear-gradient(180deg,var(--bg),var(--bg2));
+          -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+          line-height:1.5;
+        }
 
-    .wrap{max-width:1100px; margin:0 auto; padding:28px 20px 80px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;padding:12px 0;background:linear-gradient(180deg, rgba(8,16,36,.85), rgba(8,16,36,.45));backdrop-filter:blur(6px);z-index:20}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--accent2),var(--accent1));box-shadow:0 6px 22px rgba(124,203,255,.08);display:flex;align-items:center;justify-content:center;font-weight:700;color:#052;}
-    nav{display:flex;gap:12px;align-items:center}
-    nav a{color:var(--muted);padding:8px 10px;border-radius:10px;font-size:14px}
-    nav a:hover{color:var(--txt);background:var(--glass)}
+        .wrap{max-width:1100px; margin:0 auto; padding:28px 20px 80px}
+        header{display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;padding:12px 0;background:linear-gradient(180deg, rgba(8,16,36,.85), rgba(8,16,36,.45));backdrop-filter:blur(6px);z-index:20}
+        .brand{display:flex;align-items:center;gap:12px}
+        .logo{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--accent2),var(--accent1));box-shadow:0 6px 22px rgba(124,203,255,.08);display:flex;align-items:center;justify-content:center;font-weight:700;color:#052;}
+        nav{display:flex;gap:12px;align-items:center}
+        nav a{color:var(--muted);padding:8px 10px;border-radius:10px;font-size:14px}
+        nav a:hover{color:var(--txt);background:var(--glass)}
 
-    .hero{padding:28px 0}
-    .kicker{display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.02);color:var(--muted);font-size:13px}
-    .dot{width:10px;height:10px;border-radius:50%;background:var(--accent1);box-shadow:0 6px 20px rgba(124,255,178,.12)}
+        .hero{padding:28px 0}
+        .kicker{display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.02);color:var(--muted);font-size:13px}
+        .dot{width:10px;height:10px;border-radius:50%;background:var(--accent1);box-shadow:0 6px 20px rgba(124,255,178,.12)}
 
-    h1{margin:16px 0 8px;font-size:clamp(30px,5vw,48px);line-height:1.02}
-    .grad{background:linear-gradient(90deg,var(--accent1),var(--accent2),var(--accent3));-webkit-background-clip:text;background-clip:text;color:transparent}
-    .sub{max-width:70ch;color:var(--muted);font-size:16px;margin:0 0 18px}
+        h1{margin:16px 0 8px;font-size:clamp(30px,5vw,48px);line-height:1.02}
+        .grad{background:linear-gradient(90deg,var(--accent1),var(--accent2),var(--accent3));-webkit-background-clip:text;background-clip:text;color:transparent}
+        .sub{max-width:70ch;color:var(--muted);font-size:16px;margin:0 0 18px}
 
-    .ctaRow{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.06);background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));color:var(--txt)}
-    .btn.primary{background:linear-gradient(90deg, rgba(124,255,178,.12), rgba(124,203,255,.08));border-color:rgba(124,255,178,.18)}
+        .ctaRow{display:flex;gap:12px;flex-wrap:wrap}
+        .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.06);background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));color:var(--txt)}
+        .btn.primary{background:linear-gradient(90deg, rgba(124,255,178,.12), rgba(124,203,255,.08));border-color:rgba(124,255,178,.18)}
 
-    .layout{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;margin-top:20px}
-    @media(max-width:900px){.layout{grid-template-columns:1fr}}
+        .layout{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;margin-top:20px}
+        @media(max-width:900px){.layout{grid-template-columns:1fr}}
 
-    .card{border-radius:var(--radius);background:var(--card);padding:18px;border:1px solid rgba(255,255,255,.04);box-shadow:var(--shadow)}
-    .card h3{margin:0 0 8px}
-    .muted{color:var(--muted)}
+        .card{border-radius:var(--radius);background:var(--card);padding:18px;border:1px solid rgba(255,255,255,.04);box-shadow:var(--shadow)}
+        .card h3{margin:0 0 8px}
+        .muted{color:var(--muted)}
 
-    /* Hover overlay / elevation effect for cards */
-    .card, .project{
-      position:relative;
-      transition: transform .22s cubic-bezier(.2,.9,.3,1), box-shadow .22s ease, border-color .22s ease;
-      will-change: transform;
-      z-index:0;
-    }
+        /* Hover overlay / elevation effect for cards */
+        .card, .project{
+          position:relative;
+          transition: transform .22s cubic-bezier(.2,.9,.3,1), box-shadow .22s ease, border-color .22s ease;
+          will-change: transform;
+          z-index:0;
+        }
 
-    .card::after, .project::after{
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      background: linear-gradient(180deg, rgba(124,203,255,0.04) 0%, rgba(124,255,178,0.03) 40%, rgba(2,6,23,0.28) 100%);
-      opacity: 0;
-      transform: translateZ(0);
-      transition: opacity .22s ease, transform .22s ease;
-      pointer-events: none;
-      mix-blend-mode: overlay;
-    }
+        .card::after, .project::after{
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: inherit;
+          background: linear-gradient(180deg, rgba(124,203,255,0.04) 0%, rgba(124,255,178,0.03) 40%, rgba(2,6,23,0.28) 100%);
+          opacity: 0;
+          transform: translateZ(0);
+          transition: opacity .22s ease, transform .22s ease;
+          pointer-events: none;
+          mix-blend-mode: overlay;
+        }
 
-    .card:hover, .project:hover{
-      transform: translateY(-10px) scale(1.01);
-      box-shadow: 0 22px 46px rgba(2,6,23,.72);
-      border-color: rgba(124,255,178,.14);
-      z-index:6;
-    }
+        .card:hover, .project:hover{
+          transform: translateY(-10px) scale(1.01);
+          box-shadow: 0 22px 46px rgba(2,6,23,.72);
+          border-color: rgba(124,255,178,.14);
+          z-index:6;
+        }
 
-    .card:hover::after, .project:hover::after{
-      opacity: 1;
-      transform: translateY(-4px);
-    }
+        .card:hover::after, .project:hover::after{
+          opacity: 1;
+          transform: translateY(-4px);
+        }
 
-    .chips{display:flex;flex-wrap:wrap;gap:10px}
-    .chip{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.03);color:var(--muted);font-size:13px}
+        .chips{display:flex;flex-wrap:wrap;gap:10px}
+        .chip{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.03);color:var(--muted);font-size:13px}
 
-    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
-    @media(max-width:800px){.projects{grid-template-columns:1fr}}
-    .project{display:flex;flex-direction:column;background:linear-gradient(180deg, rgba(255,255,255,.01), rgba(255,255,255,.00));padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,.03)}
-    .project img{width:100%;height:120px;object-fit:cover;border-radius:8px;background:linear-gradient(90deg,var(--accent2),var(--accent1));}
-    .project h4{margin:10px 0 6px}
-    .project p{margin:0;color:var(--muted);font-size:14px}
+        .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
+        @media(max-width:800px){.projects{grid-template-columns:1fr}}
+        .project{display:flex;flex-direction:column;background:linear-gradient(180deg, rgba(255,255,255,.01), rgba(255,255,255,.00));padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,.03)}
+        .project img{width:100%;height:120px;object-fit:cover;border-radius:8px;background:linear-gradient(90deg,var(--accent2),var(--accent1));}
+        .project h4{margin:10px 0 6px}
+        .project p{margin:0;color:var(--muted);font-size:14px}
 
-    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px}
+        footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px}
 
-    /* small utilities */
-    .mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace}
-    a.btn.link{background:transparent;border:1px dashed rgba(255,255,255,.04)}
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="logo" aria-hidden="false">
-          <img src="https://avatars.githubusercontent.com/u/81127873?v=4" alt="Avatar Matheus Lima" style="width:100%;height:100%;object-fit:cover;border-radius:12px;display:block" />
-        </div>
-        <div>
-          <div class="mono" style="font-size:13px;color:var(--muted)"><a href="https://github.com/mthxuz" style="color:var(--muted);text-decoration:none">mthxuz</a></div>
-          <div style="font-size:14px">Matheus Lima • DevOps • SRE</div>
-        </div>
-      </div>
-      <nav>
-        <a href="#stack">Stack</a>
-        <a href="#projects">Projetos</a>
-        <a href="#contact">Contato</a>
-        <a href="/service.yaml" title="Ver deployment/service" style="font-size:13px;color:var(--muted)">Config</a>
-      </nav>
-    </header>
+        /* small utilities */
+        .mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace}
+        a.btn.link{background:transparent;border:1px dashed rgba(255,255,255,.04)}
+      </style>
+    </head>
+    <body>
+      <div class="wrap">
+        <header>
+          <div class="brand">
+            <div class="logo" aria-hidden="false">
+              <img src="https://avatars.githubusercontent.com/u/81127873?v=4" alt="Avatar Matheus Lima" style="width:100%;height:100%;object-fit:cover;border-radius:12px;display:block" />
+            </div>
+            <div>
+              <div class="mono" style="font-size:13px;color:var(--muted)"><a href="https://github.com/mthxuz" style="color:var(--muted);text-decoration:none">mthxuz</a></div>
+              <div style="font-size:14px">Matheus Lima • DevOps • SRE</div>
+            </div>
+          </div>
+          <nav>
+            <a href="#stack">Stack</a>
+            <a href="#projects">Projetos</a>
+            <a href="#contact">Contato</a>
+            <a href="/service.yaml" title="Ver deployment/service" style="font-size:13px;color:var(--muted)">Config</a>
+          </nav>
+        </header>
 
-    <main class="hero">
-      <div class="kicker"><span class="dot"></span> Portfólio técnico • pronto para entrevistas</div>
-      <h1>Olá, eu sou <span class="grad">Matheus Lima</span><br/>construindo infra confiável e observável.</h1>
-      <p class="sub">Sou engenheiro(a) de plataforma focado(a) em entregar pipelines seguras, automação e observabilidade que ajudam times a reduzir tempo de resolução de incidentes.</p>
+        <main class="hero">
+          <div class="kicker"><span class="dot"></span> Portfólio técnico • pronto para entrevistas</div>
+          <h1>Olá, eu sou <span class="grad">Matheus Lima</span><br/>construindo infra confiável e observável.</h1>
+          <p class="sub">Sou engenheiro(a) de plataforma focado(a) em entregar pipelines seguras, automação e observabilidade que ajudam times a reduzir tempo de resolução de incidentes.</p>
 
-      <div class="ctaRow">
-        <a class="btn primary" href="#projects">Ver projetos</a>
-        <a class="btn" href="#contact">Contato</a>
-        <a class="btn link" href="#stack">Tecnologias</a>
-      </div>
+          <div class="ctaRow">
+            <a class="btn primary" href="#projects">Ver projetos</a>
+            <a class="btn" href="#contact">Contato</a>
+            <a class="btn link" href="#stack">Tecnologias</a>
+          </div>
 
-      <div class="layout">
-        <div class="card">
-          <h3>Sobre</h3>
-          <p class="muted">Tenho experiência entregando soluções com GitOps, Kubernetes, pipelines CI/CD e observability. Gosto de transformar incidentes em aprendizado e melhorar a confiabilidade com SLOs e automação.</p>
+          <div class="layout">
+            <div class="card">
+              <h3>Sobre</h3>
+              <p class="muted">Tenho experiência entregando soluções com GitOps, Kubernetes, pipelines CI/CD e observability. Gosto de transformar incidentes em aprendizado e melhorar a confiabilidade com SLOs e automação.</p>
 
-          <div style="margin-top:12px">
-            <div class="chips">
+              <div style="margin-top:12px">
+                <div class="chips">
+                  <span class="chip">Kubernetes</span>
+                  <span class="chip">ArgoCD</span>
+                  <span class="chip">Terraform</span>
+                  <span class="chip">Prometheus</span>
+                  <span class="chip">Grafana</span>
+                  <span class="chip">CI/CD</span>
+                </div>
+              </div>
+
+              <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+                <a class="btn" href="#contact">Baixar CV</a>
+                <a class="btn" href="#projects">Ver Projetos</a>
+              </div>
+            </div>
+
+            <aside class="card">
+              <h3>Contato rápido</h3>
+              <p class="mono" style="margin:8px 0;color:var(--muted)">Nome: <b>Matheus Lima</b><br/>Email: <b>mth.lim4@gmail.com</b><br/>GitHub: <a href="https://github.com/mthxuz" class="mono" style="color:var(--muted);text-decoration:none">github.com/mthxuz</a><br/>LinkedIn: <a href="https://www.linkedin.com/in/mthlim4/" class="mono" style="color:var(--muted);text-decoration:none">linkedin.com/in/mthlim4</a></p>
+              <div class="sep" style="height:1px;background:rgba(255,255,255,.04);margin:12px 0"></div>
+              <p style="margin:0;color:var(--muted)">Disponível para contratos e posições full-time. Agende uma conversa por e-mail.</p>
+            </aside>
+          </div>
+
+          <section id="stack" style="margin-top:22px">
+            <h2 style="font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted)">Stack</h2>
+            <div class="chips" style="margin-top:10px">
+              <span class="chip">Docker</span>
               <span class="chip">Kubernetes</span>
+              <span class="chip">Helm</span>
               <span class="chip">ArgoCD</span>
               <span class="chip">Terraform</span>
               <span class="chip">Prometheus</span>
               <span class="chip">Grafana</span>
-              <span class="chip">CI/CD</span>
             </div>
-          </div>
+          </section>
 
-          <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
-            <a class="btn" href="#contact">Baixar CV</a>
-            <a class="btn" href="#projects">Ver Projetos</a>
-          </div>
-        </div>
+          <section id="projects" style="margin-top:20px">
+            <h2 style="font-size:13px;text-transform:uppercase;color:var(--muted)">Projetos</h2>
+            <div class="projects">
+              <div class="project">
+                <img alt="Projeto A" src="https://inlab.fib.upc.edu/wp-content/uploads/2025/04/logo-argocd.png"/>
+                <h4>Plataforma GitOps com ArgoCD</h4>
+                <p>Implementação de GitOps para 20+ services com rollback automático e testes de integração em pipeline.</p>
+                <div style="margin-top:8px"><a class="btn" href="#" style="padding:8px 10px">Ver repo</a></div>
+              </div>
 
-        <aside class="card">
-          <h3>Contato rápido</h3>
-          <p class="mono" style="margin:8px 0;color:var(--muted)">Nome: <b>Matheus Lima</b><br/>Email: <b>mth.lim4@gmail.com</b><br/>GitHub: <a href="https://github.com/mthxuz" class="mono" style="color:var(--muted);text-decoration:none">github.com/mthxuz</a><br/>LinkedIn: <a href="https://www.linkedin.com/in/mthlim4/" class="mono" style="color:var(--muted);text-decoration:none">linkedin.com/in/mthlim4</a></p>
-          <div class="sep" style="height:1px;background:rgba(255,255,255,.04);margin:12px 0"></div>
-          <p style="margin:0;color:var(--muted)">Disponível para contratos e posições full-time. Agende uma conversa por e-mail.</p>
-        </aside>
+              <div class="project">
+                <img alt="Projeto B" src="https://github.com/user-attachments/assets/95a6fced-daad-4926-b9d4-ab5218de00f8"/>
+                <h4>Observability e SLOs</h4>
+                <p>Designer de métricas, dashboards e alertas com foco em reduzir ruido e aumentar tempo de recuperação.</p>
+                <div style="margin-top:8px"><a class="btn" href="#">Demo</a></div>
+              </div>
+
+              <div class="project">
+                <img alt="Projeto C" src="https://github.com/user-attachments/assets/b392368c-b6b4-4718-9597-40ecf8018149"/>
+                <h4>Infra como Código</h4>
+                <p>Modules Terraform para multi-account e automação com Ansible para deploys seguras.</p>
+                <div style="margin-top:8px"><a class="btn" href="#">Detalhes</a></div>
+              </div>
+
+              <div class="project">
+                <img alt="Projeto D" src="https://github.com/user-attachments/assets/453ddc08-e6cc-481b-8a75-b9efa26be9c9"/>
+                <h4>CI/CD otimizado</h4>
+                <p>Pipelines otimizadas para reduzir tempo de build e aumentar cobertura de testes automáticos.</p>
+                <div style="margin-top:8px"><a class="btn" href="#">Case study</a></div>
+              </div>
+            </div>
+          </section>
+
+          <section id="contact" style="margin-top:22px">
+            <h2 style="font-size:13px;text-transform:uppercase;color:var(--muted)">Contato</h2>
+            <div class="card" style="margin-top:10px">
+              <h3>Fale comigo</h3>
+              <p class="muted">Prefere e-mail? Clique abaixo para abrir uma mensagem pronta.</p>
+              <div style="margin-top:12px"><a class="btn primary" href="mailto:mth.lim4@gmail.com?subject=Contato%20via%20portfolio">Enviar e-mail</a></div>
+            </div>
+          </section>
+
+        </main>
+
+        <footer>
+          <div>© <span class="mono">Matheus Lima</span> • Served by <span class="mono">nginx</span> • Deployed on <span class="mono">kubernetes</span></div>
+        </footer>
       </div>
 
-      <section id="stack" style="margin-top:22px">
-        <h2 style="font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted)">Stack</h2>
-        <div class="chips" style="margin-top:10px">
-          <span class="chip">Docker</span>
-          <span class="chip">Kubernetes</span>
-          <span class="chip">Helm</span>
-          <span class="chip">ArgoCD</span>
-          <span class="chip">Terraform</span>
-          <span class="chip">Prometheus</span>
-          <span class="chip">Grafana</span>
-        </div>
-      </section>
-
-      <section id="projects" style="margin-top:20px">
-        <h2 style="font-size:13px;text-transform:uppercase;color:var(--muted)">Projetos</h2>
-        <div class="projects">
-          <div class="project">
-            <img alt="Projeto A" src="https://inlab.fib.upc.edu/wp-content/uploads/2025/04/logo-argocd.png"/>
-            <h4>Plataforma GitOps com ArgoCD</h4>
-            <p>Implementação de GitOps para 20+ services com rollback automático e testes de integração em pipeline.</p>
-            <div style="margin-top:8px"><a class="btn" href="#" style="padding:8px 10px">Ver repo</a></div>
-          </div>
-
-          <div class="project">
-            <img alt="Projeto B" src="https://github.com/user-attachments/assets/95a6fced-daad-4926-b9d4-ab5218de00f8"/>
-            <h4>Observability e SLOs</h4>
-            <p>Designer de métricas, dashboards e alertas com foco em reduzir ruido e aumentar tempo de recuperação.</p>
-            <div style="margin-top:8px"><a class="btn" href="#">Demo</a></div>
-          </div>
-
-          <div class="project">
-            <img alt="Projeto C" src="https://github.com/user-attachments/assets/b392368c-b6b4-4718-9597-40ecf8018149"/>
-            <h4>Infra como Código</h4>
-            <p>Modules Terraform para multi-account e automação com Ansible para deploys seguras.</p>
-            <div style="margin-top:8px"><a class="btn" href="#">Detalhes</a></div>
-          </div>
-
-          <div class="project">
-            <img alt="Projeto D" src="https://github.com/user-attachments/assets/453ddc08-e6cc-481b-8a75-b9efa26be9c9"/>
-            <h4>CI/CD otimizado</h4>
-            <p>Pipelines otimizadas para reduzir tempo de build e aumentar cobertura de testes automáticos.</p>
-            <div style="margin-top:8px"><a class="btn" href="#">Case study</a></div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" style="margin-top:22px">
-        <h2 style="font-size:13px;text-transform:uppercase;color:var(--muted)">Contato</h2>
-        <div class="card" style="margin-top:10px">
-          <h3>Fale comigo</h3>
-          <p class="muted">Prefere e-mail? Clique abaixo para abrir uma mensagem pronta.</p>
-          <div style="margin-top:12px"><a class="btn primary" href="mailto:mth.lim4@gmail.com?subject=Contato%20via%20portfolio">Enviar e-mail</a></div>
-        </div>
-      </section>
-
-    </main>
-
-    <footer>
-      <div>© <span class="mono">Matheus Lima</span> • Served by <span class="mono">nginx</span> • Deployed on <span class="mono">kubernetes</span></div>
-    </footer>
-  </div>
-
-</body>
-</html>
+    </body>
+    </html>
+kind: ConfigMap
+metadata:
+  name: nginx-html
